@@ -19,12 +19,11 @@
 import { BasicUserInfo, Hooks, useAuthContext } from "@asgardeo/auth-react";
 import React, { FunctionComponent, ReactElement, useCallback, useEffect, useState } from "react";
 import { default as authConfig } from "../config.json";
-import REACT_LOGO from "../images/react-logo.png";
 import { DefaultLayout } from "../layouts/default";
-import { BookStore } from "../components";
 import { useLocation } from "react-router-dom";
 import { LogoutRequestDenied } from "../components/LogoutRequestDenied";
 import { USER_DENIED_LOGOUT } from "../constants/errors";
+import { StudentRegister } from "../components/student-register";
 
 interface DerivedState {
     authenticateResponse: BasicUserInfo,
@@ -149,12 +148,11 @@ export const HomePage: FunctionComponent = (): ReactElement => {
             {
                 state.isAuthenticated
                     ? (
-                        <div className="content">
-                            <BookStore
+                        <div>
+                            <StudentRegister
                                 // derivedResponse={ derivedAuthenticationState }
                             />
                             <button
-                                className="btn primary mt-4"
                                 onClick={ () => {
                                     handleLogout();
                                 } }
@@ -164,10 +162,9 @@ export const HomePage: FunctionComponent = (): ReactElement => {
                         </div>
                     )
                     : (
-                        <div className="content">
+                        <div>
         
                             <button
-                                className="btn primary"
                                 onClick={ () => {
                                     handleLogin();
                                 } }

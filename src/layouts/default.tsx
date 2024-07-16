@@ -53,11 +53,14 @@ export const DefaultLayout: FunctionComponent<PropsWithChildren<DefaultLayoutPro
 
     return (
         <>
-            {/* <div className="container"> */}
-                <div className="header-title">
-                    <h1>
-                        Book Store
+            
+                <div>
+                    <h1><b>
+                    Students Registration
+                    </b>
                     </h1>
+
+                    <hr  style={{ border: '2px solid black', width: '50%', margin: '20px auto' }} />
                 </div>
                 {
                     isLoading
